@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>VU Meter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">INICIO</a>
+      <span> | </span>
+      <a href="grafica.html">GRAFICA</a>
+    </nav>
+    <div class="vumetroSection">
+      <header>
+        <button onclick="conectarWS()">CONECTAR</button>
+        <h1 class="websocketOff">WEBSOCKET</h1>
+        <button id="chartStart">START RECORD CHART</button>
+        <button id="chartStop">STOP RECORD CHART</button>
+        <div style="text-align: center; margin-top: 100px;">
+          <input type="range" id="demoInput" min="0" max="5" value="0.7" step="0.01">
+          <p id="valor_range">1</p>
+        </div>
+      </header>
+      <section class="main">        
+        <div id="valorVumetro" class="fondoOscuro" width="80" height="40"></div>
+        <canvas id="vumetro_grafica" width="120" height="300" data-val="0">No canvas</canvas>
+        <div class="fondoOscuro cajaInferior" ></div>
+      </section>
+  
+      
+
+    </div>
+    <!-- CHART -->
+    
+    <section class="grafica">
+      <div id="chartContainer" style="height: 370px; width: 95%;"></div>
+    </section>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="js/websocket_api.js"></script>    
+  </body>
+</html>
